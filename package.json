@@ -1,0 +1,14 @@
+{
+    "name": "faculty-feedback-system",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "concurrently \"npm run dev --prefix faculty_feedback_backend\" \"npm start --prefix faculty_feedback_frontend\"",
+        "install-all": "npm install && npm install --prefix faculty_feedback_backend && npm install --prefix faculty_feedback_frontend"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "@tailwindcss/postcss": "^4.1.17"
+    }
+}

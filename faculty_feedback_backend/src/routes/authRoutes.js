@@ -4,27 +4,16 @@ const router = express.Router();
 import {
     studentSignup,
     studentLogin,
+    adminSignup,
+    adminLogin
 } from "../controllers/authController.js";
 
-import {
-    getStudentDashboard,
-    getStudentSubjects,
-    getFaculties,
-    submitFeedback,
-} from "../controllers/studentController.js";
+// Student Auth Routes
+router.post("/student/signup", studentSignup);
+router.post("/student/login", studentLogin);
 
-import { protect } from "../middleware/authMiddleware.js";
-
-// Public Routes
-router.post("/signup", studentSignup);
-router.post("/login", studentLogin);
-
-// Protected Routes
-router.use(protect);
-
-router.get("/dashboard", getStudentDashboard);
-router.get("/subjects", getStudentSubjects);
-router.get("/faculties", getFaculties);
-router.post("/submit", submitFeedback);
+// Admin Auth Routes
+router.post("/admin/signup", adminSignup);
+router.post("/admin/login", adminLogin);
 
 export default router;

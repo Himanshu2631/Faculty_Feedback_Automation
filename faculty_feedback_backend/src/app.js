@@ -15,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+import authRoutes from "./routes/authRoutes.js";
+app.use("/api/auth", authRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/admin", adminRoutes);
 

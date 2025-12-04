@@ -14,11 +14,7 @@ import {
     getFeedbacks,
     getFeedbackSummary
 } from '../controllers/adminController.js';
-import { adminLogin } from '../controllers/authController.js';
 import { protect, adminOnly } from '../middleware/authMiddleware.js';
-
-// Public routes
-router.post('/login', adminLogin);
 
 // Protected routes
 router.use(protect);
